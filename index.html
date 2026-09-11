@@ -5,19 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santiago Castrillón Rojo - Portafolio</title>
+
+    <!-- Fuentes retro/pixel usadas en todo el sitio (ver style.css) -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
+    <!-- ==========================================================
+         NAVEGACIÓN (menú hamburguesa + íconos sociales)
+         Fija en la esquina superior izquierda. La lógica de abrir
+         y cerrar el menú está en js/script.js
+    =========================================================== -->
     <nav class="top-nav">
+
+        <!-- Botón hamburguesa + menú desplegable con los enlaces internos -->
         <div class="menu-container">
             <button id="hamburger-btn" class="nav-btn" aria-label="Menú">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
                     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
                 </svg>
             </button>
+            <!-- "hidden" hace que el menú empiece cerrado. Se abre/cierra
+                 agregando o quitando esta clase desde script.js -->
             <ul id="dropdown-menu" class="dropdown-menu hidden">
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#about">Perfil</a></li>
@@ -26,6 +37,7 @@
             </ul>
         </div>
 
+        <!-- Íconos de LinkedIn y GitHub (siempre visibles, junto al menú) -->
         <div class="social-group">
             <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="nav-btn" aria-label="LinkedIn"
                 target="_blank">
@@ -43,9 +55,17 @@
         </div>
     </nav>
 
+    <!-- ==========================================================
+         HERO / INICIO
+         "Monitor" retro estilo pixel-art con presentación y una
+         terminal falsa donde el usuario puede escribir "dev" para
+         bajar hasta la sección "Perfil" (lógica en script.js).
+    =========================================================== -->
     <header id="hero" class="hero-section">
         <div id="monitor-frame" class="monitor-frame">
             <div class="monitor-screen">
+
+                <!-- Texto de presentación + avatar en pixel art -->
                 <div class="terminal-layout">
                     <div class="terminal-text-col">
                         <p class="terminal-greeting">Hi there.</p>
@@ -59,6 +79,8 @@
                         <img src="/assets/avatar.png" alt="Santiago" class="pixel-avatar">
                     </div>
                 </div>
+
+                <!-- Terminal falsa: input de texto donde se puede escribir "dev" -->
                 <div class="terminal-bottom">
                     <p>Welcome to SANTI-OS 1.0 LTS</p>
                     <p>++ Scroll or type "dev" + Enter</p>
@@ -68,17 +90,24 @@
                             autocomplete="off">
                     </div>
                 </div>
+
             </div>
         </div>
     </header>
 
     <div id="about" class="separator">----------------------------------------------------</div>
 
+    <!-- ==========================================================
+         SECCIÓN "PERFIL" (Acerca de mí)
+         Descripción profesional + lista de habilidades técnicas.
+    =========================================================== -->
     <section class="about-section">
         <div id="about-container" class="about-container">
+
             <div class="about-title-box">
                 <h2>System.out.println("¡Hola!");</h2>
             </div>
+
             <p class="about-main-text">
                 Desarrollador Backend Jr. con formación en Desarrollo de Software, especializado en Java, Spring Boot,
                 desarrollo de APIs RESTful y bases de datos relacionales como MySQL y PostgreSQL. Cuento con
@@ -100,15 +129,25 @@
                 <span class="skill-badge">GitHub</span>
                 <span class="skill-badge">HTML / CSS</span>
             </div>
+
         </div>
     </section>
 
     <div class="separator">----------------------------------------------------</div>
 
+    <!-- ==========================================================
+         SECCIÓN "PROYECTOS"
+         Cada tarjeta (.retro-card) sigue la MISMA estructura:
+         título -> descripción + tecnologías -> imagen + botón "Ver Repo".
+         Para agregar un proyecto nuevo, copia una tarjeta completa
+         y cambia sus datos.
+    =========================================================== -->
     <section id="projects" class="projects-section">
         <h2 class="section-title"><span>Proyectos</span></h2>
+
         <div class="cards-container">
 
+            <!-- ---------- Proyecto 1: LanhuaConnect ---------- -->
             <article class="retro-card">
                 <h3 class="card-title"><span>LanhuaConnect</span></h3>
                 <div class="card-content-grid">
@@ -122,14 +161,17 @@
                     </div>
                     <div class="card-right-col">
                         <div class="project-img-container">
-                            <img src="/assets/LanHua Connect.png" alt="LanhuaConnect Preview" class="project-preview-img">
+                            <img src="/assets/LanHua Connect.png" alt="LanhuaConnect Preview"
+                                class="project-preview-img">
                         </div>
-                        <a href="https://github.com/Michaelec19/reserve-one-5/tree/dev" class="repo-btn" target="_blank">Ver
+                        <a href="https://github.com/Michaelec19/reserve-one-5/tree/dev" class="repo-btn"
+                            target="_blank">Ver
                             Repo</a>
                     </div>
                 </div>
             </article>
 
+            <!-- ---------- Proyecto 2: Taco Loco E-commerce ---------- -->
             <article class="retro-card">
                 <h3 class="card-title"><span>Taco Loco E-commerce</span></h3>
                 <div class="card-content-grid">
@@ -151,6 +193,7 @@
                 </div>
             </article>
 
+            <!-- ---------- Proyecto 3: NASA APOD Explorer ---------- -->
             <article class="retro-card">
                 <h3 class="card-title"><span>NASA APOD Explorer</span></h3>
                 <div class="card-content-grid">
@@ -159,14 +202,15 @@
                             exploración diaria de imágenes astronómicas, incorporando validación de fechas y
                             almacenamiento local de favoritos.</p>
                         <div class="tech-tags">
-                            <span>JavaScript</span> <span>API REST</span> <span>LocalStorage</span>
+                            <span>JavaScript</span> <span>API REST</span>  <span>HTML/CSS</span>
                         </div>
                     </div>
                     <div class="card-right-col">
                         <div class="project-img-container">
                             <img src="/assets/API NASA.png" alt="NASA APOD Preview" class="project-preview-img">
                         </div>
-                        <a href="https://github.com/MarAlvGEN/NASA_APOD_Explorer.git" class="repo-btn" target="_blank">Ver Repo</a>
+                        <a href="https://github.com/MarAlvGEN/NASA_APOD_Explorer.git" class="repo-btn"
+                            target="_blank">Ver Repo</a>
                     </div>
                 </div>
             </article>
@@ -176,6 +220,12 @@
 
     <div class="separator">----------------------------------------------------</div>
 
+    <!-- ==========================================================
+         SECCIÓN "CONTACTO"
+         Columna izquierda: texto + datos de contacto.
+         Columna derecha: formulario (se envía a Formspree, un
+         servicio externo que reenvía el mensaje a tu correo).
+    =========================================================== -->
     <section id="contact" class="contact-section">
         <div class="contact-grid">
 
@@ -196,7 +246,10 @@
                 </div>
             </div>
 
-            <!-- Columna Derecha: Formulario -->
+            <!-- Columna Derecha: Formulario de contacto
+                 El atributo "action" apunta a Formspree: no necesitas
+                 backend propio, ellos reciben el POST y te lo reenvían
+                 por correo. -->
             <div class="contact-form-col">
                 <form action="https://formspree.io/f/xqpknwel" method="POST" class="retro-form">
                     <div class="form-group">
@@ -220,12 +273,17 @@
 
         </div>
 
-        <!-- Botón de CV centrado (Asegúrate de nombrar tu archivo pdf como cv-santiago.pdf o ajustarlo aquí) -->
+        <!-- Botón de descarga del CV (centrado, debajo del formulario).
+             IMPORTANTE: el archivo debe llamarse "cv-santiago.pdf" y
+             estar ubicado en la carpeta /assets, o debes cambiar esta ruta. -->
         <div class="cv-container">
             <a href="/assets/cv-santiago.pdf" class="retro-btn cv-btn" download>Descargar CV</a>
         </div>
     </section>
 
+    <!-- ==========================================================
+         PIE DE PÁGINA (FOOTER)
+    =========================================================== -->
     <footer class="site-footer">
         <div class="separator">----------------------------------------------------</div>
         <p class="footer-thanks">Gracias por llegar hasta aquí</p>
@@ -259,6 +317,7 @@
         <p class="footer-credit"><br>user:~$ exit_</p>
     </footer>
 
+    <!-- Toda la lógica interactiva (menú, terminal, animaciones) vive en script.js -->
     <script src="/js/script.js"></script>
 </body>
 
