@@ -3,6 +3,7 @@
 ¡Hola! Bienvenid@ al repositorio de mi portafolio profesional. Este sitio web fue diseñado con una temática **retro / terminal de comandos** inspirada en los sistemas operativos clásicos, integrando un toque moderno, interactivo y completamente responsivo.
 
 🔗 **Enlace al sitio en vivo:** https://santiagocastrillonr.github.io/portafolio/
+
 **link del figma: https://www.figma.com/design/PijGdqSVCWydK4RBQNA26M/Portafolio-Santiago?node-id=0-1&t=gPFGYZfqmBPidOjj-1 
 
 ---
