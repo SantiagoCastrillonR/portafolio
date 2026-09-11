@@ -23,25 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
        - Se cierra automáticamente al hacer clic en un enlace del menú.
        - Se cierra si el usuario hace clic en cualquier otro lugar
          de la página (fuera del botón y del menú).
+       - Se cierra si el usuario presiona la tecla "Escape".
     ============================================================ */
 
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const dropdownMenu = document.getElementById('dropdown-menu');
 
+    // Pequeña función auxiliar para no repetir el mismo bloque de
+    // código cada vez que necesitamos cerrar el menú. Además de
+    // ocultar el menú, actualiza "aria-expanded" en el botón para
+    // que los lectores de pantalla sepan si el menú está abierto.
+    function closeMenu() {
+        dropdownMenu.classList.add('hidden');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu() {
+        const isHidden = dropdownMenu.classList.toggle('hidden');
+        hamburgerBtn.setAttribute('aria-expanded', String(!isHidden));
+    }
+
     // Al hacer clic en el botón hamburguesa, se alterna (toggle)
     // la clase "hidden": si estaba oculto se muestra, y viceversa.
-    hamburgerBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
-    });
+    hamburgerBtn.addEventListener('click', toggleMenu);
 
     // Al hacer clic en cualquier enlace DENTRO del menú (Inicio,
     // Perfil, Proyectos, Contacto), el menú se cierra automáticamente.
     // Esto evita que el menú se quede abierto tapando la sección
     // a la que el usuario acaba de saltar.
     document.querySelectorAll('.dropdown-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            dropdownMenu.classList.add('hidden');
-        });
+        link.addEventListener('click', closeMenu);
     });
 
     // Si el usuario hace clic en cualquier parte de la página que
@@ -50,7 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // de ese elemento; si no ocurrió en ninguno de los dos, cerramos.
     document.addEventListener('click', (event) => {
         if (!hamburgerBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.add('hidden');
+            closeMenu();
+        }
+    });
+
+    // Cerrar el menú con la tecla "Escape" (accesibilidad de teclado).
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
         }
     });
 
@@ -113,33 +131,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
        Esto se logra recalculando los estilos (transform/opacity)
        cada vez que se dispara el evento "scroll" de la ventana.
+
+       NOTA sobre accesibilidad: si el usuario activó "reducir
+       movimiento" en su sistema operativo, respetamos esa
+       preferencia y no aplicamos la animación (ver también
+       css/style.css, sección 2, con la misma condición).
     ============================================================ */
 
     const monitorFrame = document.getElementById('monitor-frame');
     const aboutContainer = document.getElementById('about-container');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY; // cuántos píxeles se ha bajado desde arriba
+    if (!prefersReducedMotion) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY; // cuántos píxeles se ha bajado desde arriba
 
-        // --- Efecto sobre el monitor del Hero ---
-        // A medida que scrollY crece, "scale" y "opacity" van bajando
-        // hasta llegar a 0 (Math.max evita que se vuelvan negativos).
-        const scale = Math.max(0, 1 - scrollY / 400);
-        const opacity = Math.max(0, 1 - scrollY / 350);
-        const translateY = -scrollY * 0.5; // el monitor se mueve hacia arriba
+            // --- Efecto sobre el monitor del Hero ---
+            // A medida que scrollY crece, "scale" y "opacity" van bajando
+            // hasta llegar a 0 (Math.max evita que se vuelvan negativos).
+            const scale = Math.max(0, 1 - scrollY / 400);
+            const opacity = Math.max(0, 1 - scrollY / 350);
+            const translateY = -scrollY * 0.5; // el monitor se mueve hacia arriba
 
-        if (monitorFrame) {
-            monitorFrame.style.transform = `translateY(${translateY}px) scale(${scale})`;
-            monitorFrame.style.opacity = opacity;
-        }
+            if (monitorFrame) {
+                monitorFrame.style.transform = `translateY(${translateY}px) scale(${scale})`;
+                monitorFrame.style.opacity = opacity;
+            }
 
-        // --- Efecto sobre el bloque de "Perfil" ---
-        // Se desplaza levemente hacia arriba a medida que se hace scroll,
-        // pero nunca sube más allá de -40px (Math.max lo limita).
-        const aboutTranslateY = Math.max(-40, 30 - scrollY * 0.2);
-        if (aboutContainer) {
-            aboutContainer.style.transform = `translateY(${aboutTranslateY}px)`;
-        }
-    });
+            // --- Efecto sobre el bloque de "Perfil" ---
+            // Se desplaza levemente hacia arriba a medida que se hace scroll,
+            // pero nunca sube más allá de -40px (Math.max lo limita).
+            const aboutTranslateY = Math.max(-40, 30 - scrollY * 0.2);
+            if (aboutContainer) {
+                aboutContainer.style.transform = `translateY(${aboutTranslateY}px)`;
+            }
+        });
+    }
 
 });
