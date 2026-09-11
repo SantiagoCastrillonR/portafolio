@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Animación interactiva de scroll (monitor encogiéndose/subiendo y sección "Acerca de mí" ascendiendo)
+    // Animación interactiva de scroll
     const monitorFrame = document.getElementById('monitor-frame');
     const aboutContainer = document.getElementById('about-container');
 

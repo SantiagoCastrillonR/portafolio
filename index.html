@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <nav class="top-nav">
         <div class="menu-container">
             <button id="hamburger-btn" class="nav-btn" aria-label="Menú">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
                 </svg>
             </button>
             <ul id="dropdown-menu" class="dropdown-menu hidden">
                 <li><a href="#hero">Inicio</a></li>
-                <li><a href="#about">Acerca de mí</a></li>
+                <li><a href="#about">Perfil</a></li>
                 <li><a href="#projects">Proyectos</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </div>
-        
+
         <div class="social-group">
-            <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="nav-btn" aria-label="LinkedIn" target="_blank">
+            <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="nav-btn" aria-label="LinkedIn"
+                target="_blank">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
             </a>
             <a href="https://github.com/SantiagoCastrillonR" class="nav-btn" aria-label="GitHub" target="_blank">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
             </a>
         </div>
@@ -47,7 +52,7 @@
                         <h1 class="terminal-name">I'm Santiago</h1>
                         <ul class="terminal-roles">
                             <li>▪ Desarrollador Jr. Java Full-Stack</li>
-                            <li>▪ Backend Engineer</li>
+                            <li>▪ Backend Developer</li>
                         </ul>
                     </div>
                     <div class="terminal-image-col">
@@ -59,7 +64,8 @@
                     <p>++ Scroll or type "dev" + Enter</p>
                     <div class="terminal-input-line">
                         <span>user:~$</span>
-                        <input type="text" id="terminal-input" class="retro-input" maxlength="15" placeholder="_" autocomplete="off">
+                        <input type="text" id="terminal-input" class="retro-input" maxlength="15" placeholder="_"
+                            autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -74,12 +80,14 @@
                 <h2>System.out.println("¡Hola!");</h2>
             </div>
             <p class="about-main-text">
-                Mi nombre es Santiago Castrillón Rojo. Soy un Desarrollador Full-Stack y Backend Jr. apasionado por la creación de soluciones tecnológicas escalables con Java y Spring Boot.
+                Desarrollador Backend Jr. con formación en Desarrollo de Software, especializado en Java, Spring Boot,
+                desarrollo de APIs RESTful y bases de datos relacionales como MySQL y PostgreSQL. Cuento con
+                experiencia en el desarrollo de proyectos propios y soluciones orientadas a la optimización de procesos,
+                integrando tecnologías backend y frontend. Me destaco por mi capacidad de análisis, resolución de
+                problemas, aprendizaje continuo y trabajo en equipo, con un enfoque en construir soluciones
+                eficientes, mantenibles y alineadas con las necesidades del negocio.
             </p>
-            <p class="about-sub-text">
-                Mi formación combina el desarrollo de software con una sólida trayectoria profesional en el deporte, lo que me ha dotado de una disciplina inquebrantable, alta adaptabilidad y un fuerte enfoque en metodologías ágiles y trabajo en equipo.
-            </p>
-            
+
             <h3 class="subsection-subtitle"><span>// Mis Skills</span></h3>
             <div class="skills-container-inline">
                 <span class="skill-badge">Java</span>
@@ -100,21 +108,24 @@
     <section id="projects" class="projects-section">
         <h2 class="section-title"><span>Proyectos</span></h2>
         <div class="cards-container">
-            
+
             <article class="retro-card">
                 <h3 class="card-title"><span>LanhuaConnect</span></h3>
                 <div class="card-content-grid">
                     <div class="card-left-col">
-                        <p class="card-desc">Desarrollé e implementé un sistema centralizado de software administrativo y seguimiento deportivo para un club de artes marciales. Diseñé la arquitectura y lógica del negocio para gestionar eficientemente los datos del club.</p>
+                        <p class="card-desc">Plataforma web integral con arquitectura RESTful para la gestión
+                            administrativa y deportiva de un club de artes marciales. Automatiza inscripciones y control
+                            de asistencia con Java, Spring Boot, PostgreSQL y autenticación JWT.</p>
                         <div class="tech-tags">
-                            <span>Java</span> <span>Spring Boot</span> <span>MySQL</span> <span>JavaScript</span>
+                            <span>Java</span> <span>Spring Boot</span> <span>PostgreSQL</span> <span>JavaScript</span>
                         </div>
                     </div>
                     <div class="card-right-col">
-                        <div class="code-snippet">
-                            <code>@RestController<br>@RequestMapping("/api/lanhua")<br>public class ClubController {<br>&nbsp;&nbsp;// Gestión de datos<br>}</code>
+                        <div class="project-img-container">
+                            <img src="LanHua Connect.png" alt="LanhuaConnect Preview" class="project-preview-img">
                         </div>
-                        <a href="https://github.com/Michaelec19/reserve-one-5.git" class="repo-btn" target="_blank">Ver Repo</a>
+                        <a href="https://github.com/Michaelec19/reserve-one-5.git" class="repo-btn" target="_blank">Ver
+                            Repo</a>
                     </div>
                 </div>
             </article>
@@ -123,16 +134,19 @@
                 <h3 class="card-title"><span>Taco Loco E-commerce</span></h3>
                 <div class="card-content-grid">
                     <div class="card-left-col">
-                        <p class="card-desc">Catálogo de comida con sistema de carrito de compras interactivo. Implementación de lógica de agregación y cálculo de totales en tiempo real.</p>
+                        <p class="card-desc">Landing page y catálogo interactivo de comida mexicana desarrollado durante
+                            una hackathon, enfocado en una experiencia de usuario atractiva y responsiva, con lógica de
+                            carrito de compras en tiempo real y optimización del flujo de compra.</p>
                         <div class="tech-tags">
                             <span>JavaScript</span> <span>Bootstrap</span> <span>HTML/CSS</span>
                         </div>
                     </div>
                     <div class="card-right-col">
-                        <div class="code-snippet">
-                            <code>const cart = [];<br>function addToCart(item) {<br>&nbsp;&nbsp;cart.push(item);<br>&nbsp;&nbsp;updateTotal();<br>}</code>
+                        <div class="project-img-container">
+                            <img src="/Tacoloco.png" alt="Taco Loco Preview" class="project-preview-img">
                         </div>
-                        <a href="https://github.com/DiegoRojas25/HackathonProyect.git" class="repo-btn" target="_blank">Ver Repo</a>
+                        <a href="https://github.com/DiegoRojas25/HackathonProyect.git" class="repo-btn"
+                            target="_blank">Ver Repo</a>
                     </div>
                 </div>
             </article>
@@ -141,14 +155,16 @@
                 <h3 class="card-title"><span>NASA APOD Explorer</span></h3>
                 <div class="card-content-grid">
                     <div class="card-left-col">
-                        <p class="card-desc">Aplicación web que consume la API de la NASA para visualizar la imagen astronómica del día. Incluye validación de fechas y sistema para guardar favoritos en la memoria del navegador.</p>
+                        <p class="card-desc">Aplicación web interactiva conectada a la API oficial de la NASA para la
+                            exploración diaria de imágenes astronómicas, incorporando validación de fechas y
+                            almacenamiento local de favoritos.</p>
                         <div class="tech-tags">
                             <span>JavaScript</span> <span>API REST</span> <span>LocalStorage</span>
                         </div>
                     </div>
                     <div class="card-right-col">
-                        <div class="code-snippet">
-                            <code>async function getNASA() {<br>&nbsp;&nbsp;const res = await fetch(API);<br>&nbsp;&nbsp;return await res.json();<br>}</code>
+                        <div class="project-img-container">
+                            <img src="nasa-preview.png" alt="NASA APOD Preview" class="project-preview-img">
                         </div>
                         <a href="https://github.com/SantiagoCastrillonR" class="repo-btn" target="_blank">Ver Repo</a>
                     </div>
@@ -161,36 +177,89 @@
     <div class="separator">----------------------------------------------------</div>
 
     <section id="contact" class="contact-section">
-        <h2 class="section-title"><span>Contacto</span></h2>
-        
-        <form action="https://formspree.io/f/xqpknwel" method="POST" class="retro-form">
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" class="retro-form-input" required placeholder="Tu nombre...">
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="retro-form-input" required placeholder="tu@correo.com">
-            </div>
-            <div class="form-group">
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" class="retro-form-textarea" rows="4" required placeholder="Escribe tu mensaje..."></textarea>
-            </div>
-            <button type="submit" class="retro-btn primary-btn submit-btn">Enviar Mensaje</button>
-        </form>
+        <div class="contact-grid">
 
-        <div class="buttons-container" style="margin-top: 30px;">
-            <a href="mailto:castrillonrojosantiago@gmail.com" class="retro-btn">Email Directo</a>
-            <a href="CV-Santiago Castrillon Rojo.docx (1).pdf" class="retro-btn" download>Descargar CV</a>
+            <!-- Columna Izquierda: Texto -->
+            <div class="contact-text-col">
+                <div class="status-badge"><span class="blink">●</span> Disponible para nuevas oportunidades</div>
+                <h2 class="contact-heading">Hablemos</h2>
+                <p class="contact-desc">
+                    Estoy buscando nuevas oportunidades para crecer como <strong>Desarrollador Backend</strong> y
+                    enfrentar nuevos desafíos. Me apasiona crear soluciones con <strong>Java</strong> y <strong>Spring
+                        Boot</strong>, desarrollando APIs y trabajando con bases de datos. Tengo una mentalidad de
+                    <strong>aprendizaje continuo</strong> y estoy dispuesto a adquirir los conocimientos necesarios para
+                    asumir nuevos retos. ¡Conectemos y construyamos algo juntos!
+                </p>
+                <div class="contact-info">
+                    <p><span>> Email:</span> castrillonrojosantiago@gmail.com</p>
+                    <p><span>> Base:</span> Medellín, Colombia</p>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Formulario -->
+            <div class="contact-form-col">
+                <form action="https://formspree.io/f/xqpknwel" method="POST" class="retro-form">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" class="retro-form-input" required
+                            placeholder="Tu nombre...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="retro-form-input" required
+                            placeholder="tu@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" class="retro-form-textarea" rows="4" required
+                            placeholder="Escribe tu mensaje..."></textarea>
+                    </div>
+                    <button type="submit" class="retro-btn primary-btn submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Botón de CV centrado debajo de la cuadrícula -->
+        <div class="cv-container">
+            <a href="CV-Santiago Castrillon Rojo.docx (1).pdf" class="retro-btn cv-btn" download>Descargar CV</a>
         </div>
     </section>
 
     <footer class="site-footer">
         <div class="separator">----------------------------------------------------</div>
-        <p>© 2026 Santiago Castrillón Rojo. Todos los derechos reservados.</p>
-        <p class="footer-credit">user:~$ exit_</p>
+        <p class="footer-thanks">Gracias por llegar hasta aquí</p>
+        <h3 class="footer-name">Santiago Castrillón Rojo</h3>
+        <p class="footer-copy">© 2026 Santiago Castrillón Rojo · Hecho con ☕</p>
+
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="footer-social-btn"
+                aria-label="LinkedIn" target="_blank">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+            </a>
+            <a href="https://github.com/SantiagoCastrillonR" class="footer-social-btn" aria-label="GitHub"
+                target="_blank">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            <a href="mailto:castrillonrojosantiago@gmail.com" class="footer-social-btn" aria-label="Email"
+                target="_blank">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                        d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.71v-11.139l4.623 5.429zm1.611 1.888l3.766 4.418 3.766-4.418 5.51 6.455h-18.552l5.51-6.455zm14.166-7.817l-4.623 5.71 4.623 5.429v-11.139zm-15.778-1h13.418l-6.709 7.841-6.709-7.841z" />
+                </svg>
+            </a>
+        </div>
+
+        <p class="footer-credit"><br>user:~$ exit_</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
