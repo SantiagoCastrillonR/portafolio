@@ -1,64 +1,22 @@
-/* ================================================================
-   ÍNDICE DE ESTE ARCHIVO (Ctrl/Cmd + F para saltar a una sección)
-   ================================================================
-   1. Variables de color
-   2. Reset básico
-   3. Estilos generales del body
-   4. Navegación (menú hamburguesa + íconos sociales)
-   5. Hero / Monitor retro (sección de inicio)
-   6. Separadores
-   7. Sección "Perfil" (Acerca de mí)
-   8. Sección "Proyectos"
-   9. Sección "Contacto"
-   10. Pie de página (footer)
-   11. Utilidades de accesibilidad
-   12. Responsive (media queries)
-================================================================ */
-
-
-/* ================================================================
-   1. VARIABLES DE COLOR
-   Todas las variables empiezan con "--" y se usan en el resto
-   del archivo con var(--nombre-variable). Así, si quieres
-   cambiar la paleta de colores, solo la editas aquí una vez.
-================================================================ */
 :root {
     --bg-color: #E8D5C4;
-    /* Fondo general del sitio (beige) */
     --text-color: #3B3B3B;
-    /* Color de texto principal (gris oscuro) */
     --highlight-bg: #5A5A5A;
-    /* Fondo de las "etiquetas" resaltadas (Skills, títulos de sección) */
     --highlight-text: #E8D5C4;
-    /* Texto dentro de esas etiquetas resaltadas */
     --monitor-bg: #1A1A1A;
-    /* Fondo oscuro de la pantalla del monitor retro */
     --terminal-green: #FFB000;
-    /* Color "terminal" (en realidad es ámbar/naranja) */
 }
 
-
-/* ================================================================
-   2. RESET BÁSICO
-   Quita los márgenes y paddings por defecto que trae el navegador,
-   y hace que el padding no afecte el ancho total de los elementos.
-================================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Algunos textos (título, roles, skills, tags) ahora usan <ul>/<li>
-   por semántica y accesibilidad. Quitamos las viñetas por defecto
-   aquí, una sola vez, para no repetir esto en cada sección. */
 ul {
     list-style: none;
 }
 
-/* Respeta la preferencia del sistema operativo/navegador de
-   reducir animaciones (accesibilidad). Si el usuario activó
-   "reducir movimiento", apagamos las animaciones del sitio. */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -69,36 +27,27 @@ ul {
 }
 
 
-/* ================================================================
-   3. ESTILOS GENERALES DEL BODY
-================================================================ */
+/* ESTILOS DEL BODY */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'VT323', monospace;
-    /* Fuente estilo "terminal" para texto normal */
     font-size: 24px;
     line-height: 1.6;
     padding: 0 20px 40px 20px;
     max-width: 1150px;
-    /* El contenido nunca se estira más de esto */
     margin: 0 auto;
-    /* Centra el contenido horizontalmente */
     scroll-behavior: smooth;
-    /* Hace que los saltos con # se vean animados */
     overflow-x: hidden;
-    /* evita scroll horizontal accidental en móvil */
 }
 
-/* Los títulos usan una fuente distinta, tipo "pixel art" */
 h1,
 h2,
 h3 {
     font-family: 'Press Start 2P', monospace;
 }
 
-/* Foco de teclado visible en todos los elementos interactivos
-   (accesibilidad: alguien que navega con Tab necesita ver dónde está) */
+/* teclado visible en los elementos interactivos */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -108,31 +57,27 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   4. NAVEGACIÓN (menú hamburguesa + íconos sociales)
-================================================================ */
+/* NAVEGACIÓN  */
 .top-nav {
     position: fixed;
-    /* se queda fija en pantalla aunque se haga scroll */
     top: 25px;
     left: 25px;
     display: flex;
     gap: 15px;
     z-index: 1000;
-    /* siempre por encima del resto del contenido */
 }
 
 .menu-container {
     position: relative;
 }
 
-/* referencia para posicionar el dropdown */
+/* posicionar el dropdown */
 .social-group {
     display: flex;
     gap: 3px;
 }
 
-/* Botón cuadrado genérico (hamburguesa, LinkedIn, GitHub) */
+/* Botón cuadrado */
 .nav-btn {
     background-color: #4C4C4C;
     color: var(--bg-color);
@@ -144,18 +89,16 @@ textarea:focus-visible {
     align-items: center;
     cursor: pointer;
     box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-    /* sombra "dura" estilo retro */
     transition: transform 0.1s;
     text-decoration: none;
 }
 
-/* Efecto de "botón presionado" al hacer clic */
 .nav-btn:active {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* Menú desplegable con los enlaces internos (Inicio, Perfil, etc.) */
+/* Menú desplegable */
 .dropdown-menu {
     position: absolute;
     top: 50px;
@@ -169,7 +112,6 @@ textarea:focus-visible {
     min-width: 140px;
 }
 
-/* Esta clase la agrega/quita script.js para mostrar u ocultar el menú */
 .dropdown-menu.hidden {
     display: none;
 }
@@ -187,21 +129,16 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   5. HERO / MONITOR RETRO (sección de inicio)
-================================================================ */
+/* HERO  */
 .hero-section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* ocupa toda la altura de la pantalla al cargar */
     padding: 20px 0;
 }
 
-/* Marco exterior "blanco" que simula la carcasa del monitor.
-   "will-change" avisa al navegador que este elemento se va a
-   animar (transform/opacity), para que la animación sea más fluida. */
+/* carcasa del monitor */
 .monitor-frame {
     background-color: #f4f4f4;
     padding: 30px;
@@ -214,7 +151,7 @@ textarea:focus-visible {
     transform-origin: center center;
 }
 
-/* Pantalla oscura interna del monitor, donde va el texto y el avatar */
+/* Pantalla oscura del monitor */
 .monitor-screen {
     background-color: var(--monitor-bg);
     border-radius: 20px;
@@ -229,9 +166,7 @@ textarea:focus-visible {
     width: 100%;
 }
 
-/* Efecto de "líneas de escaneo" (scanlines) y aberración de color,
-   típico de los monitores CRT antiguos. Es una capa decorativa
-   que se dibuja ENCIMA de todo lo demás (por eso z-index: 4). */
+/* Efecto de líneas de escaneo */
 .monitor-screen::after {
     content: " ";
     display: block;
@@ -249,7 +184,7 @@ textarea:focus-visible {
     /* para que no bloquee los clics */
 }
 
-/* Línea de brillo que "escanea" la pantalla de arriba a abajo (animación) */
+/* Línea de brillo que "escanea" la pantalla de arriba a abajo */
 .monitor-screen::before {
     content: " ";
     display: block;
@@ -274,7 +209,7 @@ textarea:focus-visible {
     }
 }
 
-/* Fila superior: texto de presentación (izquierda) + avatar (derecha) */
+/* texto de presentación + avatar  */
 .terminal-layout {
     display: flex;
     justify-content: space-between;
@@ -282,9 +217,7 @@ textarea:focus-visible {
     width: 100%;
     margin-bottom: 30px;
     z-index: 3;
-    /* por encima del fondo, por debajo del efecto CRT */
     flex-wrap: wrap;
-    /* en pantallas pequeñas, el avatar baja debajo del texto */
     gap: 20px;
 }
 
@@ -321,8 +254,7 @@ textarea:focus-visible {
     z-index: 3;
 }
 
-/* "image-rendering: pixelated" evita que el navegador suavice
-   la imagen, para que se mantenga el estilo pixel art */
+/* image pixelated */
 .pixel-avatar {
     width: 280px;
     max-width: 100%;
@@ -333,7 +265,6 @@ textarea:focus-visible {
     opacity: 0.95;
 }
 
-/* Bloque inferior de la "terminal": mensajes + input de texto */
 .terminal-bottom {
     color: var(--terminal-green);
     font-size: 18px;
@@ -369,8 +300,7 @@ textarea:focus-visible {
     animation: blink 1s step-end infinite;
 }
 
-/* Animación de "parpadeo", reutilizada por el cursor y por el
-   punto verde de "Disponible para nuevas oportunidades" */
+/* Animación de "parpadeo" disponible */
 .cursor,
 .blink {
     animation: blink 1s step-end infinite;
@@ -383,9 +313,7 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   6. SEPARADORES (las líneas de guiones "----" entre secciones)
-================================================================ */
+/* SEPARADORES */
 .separator {
     text-align: center;
     letter-spacing: 2px;
@@ -399,9 +327,7 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   7. SECCIÓN "PERFIL" (Acerca de mí)
-================================================================ */
+/* Acerca de mí */
 .about-section {
     max-width: 800px;
     margin: 0 auto;
@@ -410,8 +336,7 @@ textarea:focus-visible {
     scroll-margin-top: 20px;
 }
 
-/* "will-change: transform" porque este contenedor se mueve
-   levemente con el scroll (ver js/script.js) */
+/* contenedor se mueve levemente con el scroll  */
 .about-container {
     display: flex;
     flex-direction: column;
@@ -444,7 +369,7 @@ textarea:focus-visible {
     text-align: justify;
 }
 
-/* Subtítulos tipo "// Mis Skills" */
+/* Mis Skills" */
 .subsection-subtitle {
     font-size: 12px;
     font-family: 'Press Start 2P', monospace;
@@ -460,7 +385,7 @@ textarea:focus-visible {
     display: inline-block;
 }
 
-/* Contenedor de las "pastillas" de habilidades (Java, Spring Boot, etc.) */
+/* Contenedor de habilidades */
 .skills-container-inline {
     display: flex;
     flex-wrap: wrap;
@@ -486,9 +411,7 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   8. SECCIÓN "PROYECTOS"
-================================================================ */
+/* PROYECTOS */
 .section-title {
     text-align: center;
     margin-bottom: 40px;
@@ -510,7 +433,7 @@ textarea:focus-visible {
     align-items: center;
 }
 
-/* Tarjeta de proyecto (una por cada <article class="retro-card">) */
+/* Tarjeta de proyecto */
 .retro-card {
     border: 4px solid var(--text-color);
     padding: 25px;
@@ -541,8 +464,6 @@ textarea:focus-visible {
     padding: 5px 10px;
 }
 
-/* Grilla interna de la tarjeta: texto a la izquierda, imagen a la derecha.
-   En pantallas angostas pasa a columna única (ver sección 12, Responsive). */
 .card-content-grid {
     display: flex;
     justify-content: space-between;
@@ -556,7 +477,6 @@ textarea:focus-visible {
     flex-direction: column;
     gap: 15px;
     min-width: 0;
-    /* evita que el texto largo empuje la columna fuera de la tarjeta */
 }
 
 .card-desc {
@@ -584,7 +504,7 @@ textarea:focus-visible {
     min-width: 360px;
 }
 
-/* Recuadro oscuro que contiene la imagen de preview del proyecto */
+/* Recuadro oscuro que contiene la imagen de del proyecto */
 .project-img-container {
     background-color: #1a1a1a;
     border-radius: 6px;
@@ -602,7 +522,6 @@ textarea:focus-visible {
     height: 100%;
     display: block;
     object-fit: contain;
-    /* la imagen se ve completa, sin recortarse */
     transition: transform 0.3s ease;
 }
 
@@ -629,9 +548,7 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   9. SECCIÓN "CONTACTO"
-================================================================ */
+/* CONTACTO */
 .contact-section {
     max-width: 1000px;
     margin: 0 auto;
@@ -640,8 +557,6 @@ textarea:focus-visible {
     scroll-margin-top: 20px;
 }
 
-/* Grilla de 2 columnas: texto | formulario.
-   En pantallas angostas pasa a columna única (ver sección 12, Responsive). */
 .contact-grid {
     display: flex;
     flex-direction: row;
@@ -694,8 +609,7 @@ textarea:focus-visible {
     color: var(--highlight-bg);
 }
 
-/* Datos de contacto (antes eran <p>, ahora es una lista de
-   definición <dl> por semántica: "término -> valor") */
+/* Datos de contacto */
 .contact-info {
     font-family: 'Press Start 2P', monospace;
     font-size: 10px;
@@ -724,7 +638,7 @@ textarea:focus-visible {
     color: var(--text-color);
 }
 
-/* Botón genérico estilo retro, reutilizado por "Enviar Mensaje" y "Descargar CV" */
+/* Botón genérico estilo retro */
 .retro-btn {
     text-decoration: none;
     color: var(--text-color);
@@ -752,7 +666,7 @@ textarea:focus-visible {
     color: var(--bg-color);
 }
 
-/* ---------- Formulario de contacto ---------- */
+/* Formulario de contacto */
 .contact-form-col {
     flex: 1;
     max-width: 480px;
@@ -805,7 +719,7 @@ textarea:focus-visible {
     margin-top: 10px;
 }
 
-/* ---------- Botón de descarga de CV ---------- */
+/* Botón descarga de CV  */
 .cv-container {
     display: flex;
     justify-content: center;
@@ -821,9 +735,7 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   10. PIE DE PÁGINA (FOOTER)
-================================================================ */
+/* FOOTER */
 .site-footer {
     text-align: center;
     margin-top: 80px;
@@ -881,11 +793,7 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   11. UTILIDADES DE ACCESIBILIDAD
-================================================================ */
-/* Oculta un elemento visualmente pero lo deja disponible para
-   lectores de pantalla (usado en el <label> de la terminal falsa) */
+/* UTILIDADES DE ACCESIBILIDAD */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -899,18 +807,9 @@ textarea:focus-visible {
 }
 
 
-/* ================================================================
-   12. RESPONSIVE (media queries)
-   Se organizan de mayor a menor ancho de pantalla:
-     - 900px: tablets. El formulario y las tarjetas de proyecto
-       pasan de estar en fila a estar apiladas verticalmente.
-     - 600px: celulares. Se reduce el tamaño de fuente general,
-       el monitor del hero y los espacios, para que todo quepa
-       cómodo sin scroll horizontal.
-     - 400px: celulares muy angostos. Ajustes finos adicionales.
-================================================================ */
+/* RESPONSIVE */
 
-/* ---------- Tablets (≤ 900px) ---------- */
+/* Tablets */
 @media (max-width: 900px) {
 
     .contact-grid,
@@ -930,15 +829,14 @@ textarea:focus-visible {
     }
 }
 
-/* ---------- Celulares (≤ 600px) ---------- */
+/* Celulares */
 @media (max-width: 600px) {
     body {
         font-size: 18px;
         padding: 0 14px 30px 14px;
     }
 
-    /* El menú y los íconos sociales quedan más pequeños y pegados
-       a la esquina, para no tapar el contenido del hero. */
+    /* menú  */
     .top-nav {
         top: 14px;
         left: 14px;
@@ -950,8 +848,7 @@ textarea:focus-visible {
         height: 32px;
     }
 
-    /* El "monitor" reduce su padding y bordes para aprovechar
-       mejor el ancho disponible en pantallas pequeñas. */
+    /* monitor */
     .monitor-frame {
         padding: 14px;
         border-radius: 24px;
@@ -1003,7 +900,7 @@ textarea:focus-visible {
     }
 }
 
-/* ---------- Celulares muy angostos (≤ 400px) ---------- */
+/* Celulares muy angostos */
 @media (max-width: 400px) {
     .terminal-layout {
         justify-content: center;
@@ -1012,7 +909,6 @@ textarea:focus-visible {
 
     .terminal-image-col {
         order: -1;
-        /* en pantallas muy angostas, el avatar va primero */
     }
 
     .pixel-avatar {

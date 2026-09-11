@@ -2,347 +2,305 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Santiago Castrillón Rojo - Portafolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santiago Castrillón Rojo - Portafolio</title>
 
-  <!-- Fuentes retro/pixel usadas en todo el sitio (ver css/style.css) -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
-  <!--
-    RUTAS RELATIVAS (importante para GitHub Pages):
-    Todas las rutas de este proyecto empiezan con "./" (por ejemplo
-    "./css/style.css") en vez de "/css/style.css". Esto es a propósito:
-    cuando el sitio se publica en GitHub Pages, normalmente queda en
-    una URL del tipo "https://usuario.github.io/nombre-repo/", y una
-    ruta que empiece con "/" buscaría el archivo desde la raíz del
-    dominio (fallaría). Con "./" la ruta siempre es relativa al lugar
-    donde está el propio archivo, así que funciona igual en local y
-    en GitHub Pages. Si en algún momento agregas archivos nuevos,
-    respeta este mismo formato de ruta.
-  -->
-  <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-  <!-- ==========================================================
-       NAVEGACIÓN (menú hamburguesa + íconos sociales)
-       Fija en la esquina superior izquierda. La lógica de abrir
-       y cerrar el menú está en js/script.js
-  =========================================================== -->
-  <nav class="top-nav">
+    <nav class="top-nav">
 
-    <!-- Botón hamburguesa + menú desplegable con los enlaces internos -->
-    <div class="menu-container">
-      <button id="hamburger-btn" class="nav-btn" aria-label="Abrir menú de navegación" aria-expanded="false"
-        aria-controls="dropdown-menu">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-        </svg>
-      </button>
-      <!-- "hidden" hace que el menú empiece cerrado. Se abre/cierra
-           agregando o quitando esta clase desde script.js -->
-      <ul id="dropdown-menu" class="dropdown-menu hidden">
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#about">Perfil</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </div>
-
-    <!-- Íconos de LinkedIn y GitHub (siempre visibles, junto al menú) -->
-    <div class="social-group">
-      <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="nav-btn" aria-label="Ir a LinkedIn"
-        target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path
-            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-        </svg>
-      </a>
-      <a href="https://github.com/SantiagoCastrillonR" class="nav-btn" aria-label="Ir a GitHub" target="_blank"
-        rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-          <path
-            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-        </svg>
-      </a>
-    </div>
-  </nav>
-
-  <!-- ==========================================================
-       HERO / INICIO
-       "Monitor" retro estilo pixel-art con presentación y una
-       terminal falsa donde el usuario puede escribir "dev" para
-       bajar hasta la sección "Perfil" (lógica en script.js).
-  =========================================================== -->
-  <header id="hero" class="hero-section">
-    <div id="monitor-frame" class="monitor-frame">
-      <div class="monitor-screen">
-
-        <!-- Texto de presentación + avatar en pixel art -->
-        <div class="terminal-layout">
-          <div class="terminal-text-col">
-            <p class="terminal-greeting">Hi there.</p>
-            <h1 class="terminal-name">I'm Santiago</h1>
-            <ul class="terminal-roles">
-              <li>▪ Desarrollador Jr. Java Full-Stack</li>
-              <li>▪ Backend Developer</li>
+        <!-- Botón hamburguesa  -->
+        <div class="menu-container">
+            <button id="hamburger-btn" class="nav-btn" aria-label="Abrir menú de navegación" aria-expanded="false"
+                aria-controls="dropdown-menu">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </button>
+            <!-- menú -->
+            <ul id="dropdown-menu" class="dropdown-menu hidden">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Perfil</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
-          </div>
-          <div class="terminal-image-col">
-            <img src="./assets/avatar.png" alt="Avatar en pixel art de Santiago" class="pixel-avatar">
-          </div>
         </div>
 
-        <!-- Terminal falsa: input de texto donde se puede escribir "dev" -->
-        <div class="terminal-bottom">
-          <p>Welcome to SANTI-OS 1.0 LTS</p>
-          <p>++ Scroll or type "dev" + Enter</p>
-          <div class="terminal-input-line">
-            <label for="terminal-input" class="visually-hidden">Escribe un comando de la terminal</label>
-            <span aria-hidden="true">user:~$</span>
-            <input type="text" id="terminal-input" class="retro-input" maxlength="15" placeholder="_"
-              autocomplete="off">
-          </div>
+        <!-- Íconos de LinkedIn y GitHub  -->
+        <div class="social-group">
+            <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="nav-btn" aria-label="Ir a LinkedIn"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+            </a>
+            <a href="https://github.com/SantiagoCastrillonR" class="nav-btn" aria-label="Ir a GitHub" target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
         </div>
+    </nav>
 
-      </div>
-    </div>
-  </header>
+    <!-- "Monitor"  -->
+    <header id="hero" class="hero-section">
+        <div id="monitor-frame" class="monitor-frame">
+            <div class="monitor-screen">
 
-  <div id="about" class="separator" aria-hidden="true">----------------------------------------------------</div>
+                <div class="terminal-layout">
+                    <div class="terminal-text-col">
+                        <p class="terminal-greeting">Hi there.</p>
+                        <h1 class="terminal-name">I'm Santiago</h1>
+                        <ul class="terminal-roles">
+                            <li>▪ Desarrollador Jr. Java Full-Stack</li>
+                            <li>▪ Backend Developer</li>
+                        </ul>
+                    </div>
+                    <div class="terminal-image-col">
+                        <img src="./assets/avatar.png" alt="Avatar en pixel art de Santiago" class="pixel-avatar">
+                    </div>
+                </div>
 
-  <!-- ==========================================================
-       SECCIÓN "PERFIL" (Acerca de mí)
-       Descripción profesional + lista de habilidades técnicas.
-  =========================================================== -->
-  <section class="about-section" aria-labelledby="about-title">
-    <div id="about-container" class="about-container">
+                <div class="terminal-bottom">
+                    <p>Welcome to SANTI-OS 1.0 LTS</p>
+                    <p>++ Scroll or type "dev" + Enter</p>
+                    <div class="terminal-input-line">
+                        <label for="terminal-input" class="visually-hidden">Escribe un comando de la terminal</label>
+                        <span aria-hidden="true">user:~$</span>
+                        <input type="text" id="terminal-input" class="retro-input" maxlength="15" placeholder="_"
+                            autocomplete="off">
+                    </div>
+                </div>
 
-      <div class="about-title-box">
-        <h2 id="about-title">System.out.println("¡Hola!");</h2>
-      </div>
-
-      <p class="about-main-text">
-        Desarrollador Backend Jr. con formación en Desarrollo de Software, especializado en Java, Spring Boot,
-        desarrollo de APIs RESTful y bases de datos relacionales como MySQL y PostgreSQL. Cuento con
-        experiencia en el desarrollo de proyectos propios y soluciones orientadas a la optimización de procesos,
-        integrando tecnologías backend y frontend. Me destaco por mi capacidad de análisis, resolución de
-        problemas, aprendizaje continuo y trabajo en equipo, con un enfoque en construir soluciones
-        eficientes, mantenibles y alineadas con las necesidades del negocio.
-      </p>
-
-      <h3 class="subsection-subtitle"><span>// Mis Skills</span></h3>
-      <ul class="skills-container-inline">
-        <li class="skill-badge">Java</li>
-        <li class="skill-badge">Spring Boot</li>
-        <li class="skill-badge">JavaScript</li>
-        <li class="skill-badge">Node.js</li>
-        <li class="skill-badge">MySQL</li>
-        <li class="skill-badge">PostgreSQL</li>
-        <li class="skill-badge">Git</li>
-        <li class="skill-badge">GitHub</li>
-        <li class="skill-badge">HTML / CSS</li>
-      </ul>
-
-    </div>
-  </section>
-
-  <div class="separator" aria-hidden="true">----------------------------------------------------</div>
-
-  <!-- ==========================================================
-       SECCIÓN "PROYECTOS"
-       Cada tarjeta (.retro-card) sigue la MISMA estructura:
-       título -> descripción + tecnologías -> imagen + botón "Ver Repo".
-       Para agregar un proyecto nuevo, copia una tarjeta <article>
-       completa (desde <article class="retro-card"> hasta </article>)
-       y solo cambia: título, descripción, tecnologías, imagen y link.
-  =========================================================== -->
-  <section id="projects" class="projects-section" aria-labelledby="projects-title">
-    <h2 class="section-title" id="projects-title"><span>Proyectos</span></h2>
-
-    <div class="cards-container">
-
-      <!-- ---------- Proyecto 1: LanhuaConnect ---------- -->
-      <article class="retro-card">
-        <h3 class="card-title"><span>LanhuaConnect</span></h3>
-        <div class="card-content-grid">
-          <div class="card-left-col">
-            <p class="card-desc">Plataforma web integral con arquitectura RESTful para la gestión
-              administrativa y deportiva de un club de artes marciales. Automatiza inscripciones y control
-              de asistencia con Java, Spring Boot, PostgreSQL y autenticación JWT.</p>
-            <ul class="tech-tags">
-              <li>Java</li>
-              <li>Spring Boot</li>
-              <li>PostgreSQL</li>
-              <li>JavaScript</li>
-            </ul>
-          </div>
-          <div class="card-right-col">
-            <div class="project-img-container">
-              <img src="./assets/LanHua Connect.png" alt="Vista previa del proyecto LanhuaConnect"
-                class="project-preview-img" loading="lazy">
             </div>
-            <a href="https://github.com/Michaelec19/reserve-one-5/tree/dev" class="repo-btn" target="_blank"
-              rel="noopener noreferrer">Ver Repo</a>
-          </div>
         </div>
-      </article>
+    </header>
 
-      <!-- ---------- Proyecto 2: Taco Loco E-commerce ---------- -->
-      <article class="retro-card">
-        <h3 class="card-title"><span>Taco Loco E-commerce</span></h3>
-        <div class="card-content-grid">
-          <div class="card-left-col">
-            <p class="card-desc">Landing page y catálogo interactivo de comida mexicana desarrollado durante
-              una hackathon, enfocado en una experiencia de usuario atractiva y responsiva, con lógica de
-              carrito de compras en tiempo real y optimización del flujo de compra.</p>
-            <ul class="tech-tags">
-              <li>JavaScript</li>
-              <li>Bootstrap</li>
-              <li>HTML/CSS</li>
-            </ul>
-          </div>
-          <div class="card-right-col">
-            <div class="project-img-container">
-              <img src="./assets/Tacoloco.png" alt="Vista previa del proyecto Taco Loco E-commerce"
-                class="project-preview-img" loading="lazy">
+    <div id="about" class="separator" aria-hidden="true">----------------------------------------------------</div>
+
+    <!--Acerca de mí-->
+    <section class="about-section" aria-labelledby="about-title">
+        <div id="about-container" class="about-container">
+
+            <div class="about-title-box">
+                <h2 id="about-title">System.out.println("¡Hola!");</h2>
             </div>
-            <a href="https://github.com/DiegoRojas25/HackathonProyect.git" class="repo-btn" target="_blank"
-              rel="noopener noreferrer">Ver Repo</a>
-          </div>
-        </div>
-      </article>
 
-      <!-- ---------- Proyecto 3: NASA APOD Explorer ---------- -->
-      <article class="retro-card">
-        <h3 class="card-title"><span>NASA APOD Explorer</span></h3>
-        <div class="card-content-grid">
-          <div class="card-left-col">
-            <p class="card-desc">Aplicación web interactiva conectada a la API oficial de la NASA para la
-              exploración diaria de imágenes astronómicas, incorporando validación de fechas y
-              almacenamiento local de favoritos.</p>
-            <ul class="tech-tags">
-              <li>JavaScript</li>
-              <li>API REST</li>
-              <li>HTML/CSS</li>
+            <p class="about-main-text">
+                Desarrollador Backend Jr. con formación en Desarrollo de Software, especializado en Java, Spring Boot,
+                desarrollo de APIs RESTful y bases de datos relacionales como MySQL y PostgreSQL. Cuento con
+                experiencia en el desarrollo de proyectos propios y soluciones orientadas a la optimización de procesos,
+                integrando tecnologías backend y frontend. Me destaco por mi capacidad de análisis, resolución de
+                problemas, aprendizaje continuo y trabajo en equipo, con un enfoque en construir soluciones
+                eficientes, mantenibles y alineadas con las necesidades del negocio.
+            </p>
+
+            <h3 class="subsection-subtitle"><span>// Mis Skills</span></h3>
+            <ul class="skills-container-inline">
+                <li class="skill-badge">Java</li>
+                <li class="skill-badge">Spring Boot</li>
+                <li class="skill-badge">JavaScript</li>
+                <li class="skill-badge">Node.js</li>
+                <li class="skill-badge">MySQL</li>
+                <li class="skill-badge">PostgreSQL</li>
+                <li class="skill-badge">Git</li>
+                <li class="skill-badge">GitHub</li>
+                <li class="skill-badge">HTML / CSS</li>
             </ul>
-          </div>
-          <div class="card-right-col">
-            <div class="project-img-container">
-              <img src="./assets/API NASA.png" alt="Vista previa del proyecto NASA APOD Explorer"
-                class="project-preview-img" loading="lazy">
-            </div>
-            <a href="https://github.com/MarAlvGEN/NASA_APOD_Explorer.git" class="repo-btn" target="_blank"
-              rel="noopener noreferrer">Ver Repo</a>
-          </div>
+
         </div>
-      </article>
+    </section>
 
-    </div>
-  </section>
-
-  <div class="separator" aria-hidden="true">----------------------------------------------------</div>
-
-  <!-- ==========================================================
-       SECCIÓN "CONTACTO"
-       Columna izquierda: texto + datos de contacto.
-       Columna derecha: formulario (se envía a Formspree, un
-       servicio externo que reenvía el mensaje a tu correo).
-  =========================================================== -->
-  <section id="contact" class="contact-section" aria-labelledby="contact-title">
-    <div class="contact-grid">
-
-      <!-- Columna Izquierda: Texto -->
-      <div class="contact-text-col">
-        <p class="status-badge"><span class="blink" aria-hidden="true">●</span> Disponible para nuevas
-          oportunidades</p>
-        <h2 class="contact-heading" id="contact-title">Hablemos</h2>
-        <p class="contact-desc">
-          Estoy buscando nuevas oportunidades para crecer como <strong>Desarrollador Backend</strong> y
-          enfrentar nuevos desafíos. Me apasiona crear soluciones con <strong>Java</strong> y <strong>Spring
-            Boot</strong>, desarrollando APIs y trabajando con bases de datos. Tengo una mentalidad de
-          <strong>aprendizaje continuo</strong> y estoy dispuesto a adquirir los conocimientos necesarios para
-          asumir nuevos retos. ¡Conectemos y construyamos algo juntos!
-        </p>
-        <dl class="contact-info">
-          <div><dt>&gt; Email:</dt> <dd><a href="mailto:castrillonrojosantiago@gmail.com">castrillonrojosantiago@gmail.com</a></dd></div>
-          <div><dt>&gt; Base:</dt> <dd>Medellín, Colombia</dd></div>
-        </dl>
-      </div>
-
-      <!-- Columna Derecha: Formulario de contacto
-           El atributo "action" apunta a Formspree: no necesitas
-           backend propio, ellos reciben el POST y te lo reenvían
-           por correo. -->
-      <div class="contact-form-col">
-        <form action="https://formspree.io/f/xqpknwel" method="POST" class="retro-form">
-          <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" class="retro-form-input" required placeholder="Tu nombre...">
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="retro-form-input" required
-              placeholder="tu@correo.com">
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" class="retro-form-textarea" rows="4" required
-              placeholder="Escribe tu mensaje..."></textarea>
-          </div>
-          <button type="submit" class="retro-btn primary-btn submit-btn">Enviar Mensaje</button>
-        </form>
-      </div>
-
-    </div>
-
-    <!-- Botón de descarga del CV (centrado, debajo del formulario).
-         IMPORTANTE: el archivo debe llamarse "cv-santiago.pdf" y
-         estar ubicado en la carpeta /assets, o debes cambiar esta ruta. -->
-    <div class="cv-container">
-      <a href="./assets/cv-santiago.pdf" class="retro-btn cv-btn" download>Descargar CV</a>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       PIE DE PÁGINA (FOOTER)
-  =========================================================== -->
-  <footer class="site-footer">
     <div class="separator" aria-hidden="true">----------------------------------------------------</div>
-    <p class="footer-thanks">Gracias por llegar hasta aquí</p>
-    <h3 class="footer-name">Santiago Castrillón Rojo</h3>
-    <p class="footer-copy">© 2026 Santiago Castrillón Rojo · Hecho con ☕</p>
 
-    <div class="footer-socials">
-      <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="footer-social-btn"
-        aria-label="Ir a LinkedIn" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path
-            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-        </svg>
-      </a>
-      <a href="https://github.com/SantiagoCastrillonR" class="footer-social-btn" aria-label="Ir a GitHub"
-        target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-          <path
-            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-        </svg>
-      </a>
-      <a href="mailto:castrillonrojosantiago@gmail.com" class="footer-social-btn" aria-label="Enviar correo">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path
-            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.71v-11.139l4.623 5.429zm1.611 1.888l3.766 4.418 3.766-4.418 5.51 6.455h-18.552l5.51-6.455zm14.166-7.817l-4.623 5.71 4.623 5.429v-11.139zm-15.778-1h13.418l-6.709 7.841-6.709-7.841z" />
-        </svg>
-      </a>
-    </div>
+    <!-- PROYECTOS -->
+    <section id="projects" class="projects-section" aria-labelledby="projects-title">
+        <h2 class="section-title" id="projects-title"><span>Proyectos</span></h2>
 
-    <p class="footer-credit"><br>user:~$ exit_</p>
-  </footer>
+        <div class="cards-container">
 
-  <!-- Toda la lógica interactiva (menú, terminal, animaciones) vive en js/script.js -->
-  <script src="./js/script.js"></script>
+            <!-- Proyecto 1 -->
+            <article class="retro-card">
+                <h3 class="card-title"><span>LanhuaConnect</span></h3>
+                <div class="card-content-grid">
+                    <div class="card-left-col">
+                        <p class="card-desc">Plataforma web integral con arquitectura RESTful para la gestión
+                            administrativa y deportiva de un club de artes marciales. Automatiza inscripciones y control
+                            de asistencia con Java, Spring Boot, PostgreSQL y autenticación JWT.</p>
+                        <ul class="tech-tags">
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                            <li>PostgreSQL</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="card-right-col">
+                        <div class="project-img-container">
+                            <img src="./assets/LanHua Connect.png" alt="Vista previa del proyecto LanhuaConnect"
+                                class="project-preview-img" loading="lazy">
+                        </div>
+                        <a href="https://github.com/Michaelec19/reserve-one-5/tree/dev" class="repo-btn" target="_blank"
+                            rel="noopener noreferrer">Ver Repo</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="retro-card">
+                <h3 class="card-title"><span>Taco Loco E-commerce</span></h3>
+                <div class="card-content-grid">
+                    <div class="card-left-col">
+                        <p class="card-desc">Landing page y catálogo interactivo de comida mexicana desarrollado durante
+                            una hackathon, enfocado en una experiencia de usuario atractiva y responsiva, con lógica de
+                            carrito de compras en tiempo real y optimización del flujo de compra.</p>
+                        <ul class="tech-tags">
+                            <li>JavaScript</li>
+                            <li>Bootstrap</li>
+                            <li>HTML/CSS</li>
+                        </ul>
+                    </div>
+                    <div class="card-right-col">
+                        <div class="project-img-container">
+                            <img src="./assets/Tacoloco.png" alt="Vista previa del proyecto Taco Loco E-commerce"
+                                class="project-preview-img" loading="lazy">
+                        </div>
+                        <a href="https://github.com/DiegoRojas25/HackathonProyect.git" class="repo-btn" target="_blank"
+                            rel="noopener noreferrer">Ver Repo</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article class="retro-card">
+                <h3 class="card-title"><span>NASA APOD Explorer</span></h3>
+                <div class="card-content-grid">
+                    <div class="card-left-col">
+                        <p class="card-desc">Aplicación web interactiva conectada a la API oficial de la NASA para la
+                            exploración diaria de imágenes astronómicas, incorporando validación de fechas y
+                            almacenamiento local de favoritos.</p>
+                        <ul class="tech-tags">
+                            <li>JavaScript</li>
+                            <li>API REST</li>
+                            <li>HTML/CSS</li>
+                        </ul>
+                    </div>
+                    <div class="card-right-col">
+                        <div class="project-img-container">
+                            <img src="./assets/API NASA.png" alt="Vista previa del proyecto NASA APOD Explorer"
+                                class="project-preview-img" loading="lazy">
+                        </div>
+                        <a href="https://github.com/MarAlvGEN/NASA_APOD_Explorer.git" class="repo-btn" target="_blank"
+                            rel="noopener noreferrer">Ver Repo</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <div class="separator" aria-hidden="true">----------------------------------------------------</div>
+
+    <!-- CONTACTO -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="contact-grid">
+
+            <!-- Columna Izquierda -->
+            <div class="contact-text-col">
+                <p class="status-badge"><span class="blink" aria-hidden="true">●</span> Disponible para nuevas
+                    oportunidades</p>
+                <h2 class="contact-heading" id="contact-title">Hablemos</h2>
+                <p class="contact-desc">
+                    Estoy buscando nuevas oportunidades para crecer como <strong>Desarrollador Backend</strong> y
+                    enfrentar nuevos desafíos. Me apasiona crear soluciones con <strong>Java</strong> y <strong>Spring
+                        Boot</strong>, desarrollando APIs y trabajando con bases de datos. Tengo una mentalidad de
+                    <strong>aprendizaje continuo</strong> y estoy dispuesto a adquirir los conocimientos necesarios para
+                    asumir nuevos retos. ¡Conectemos y construyamos algo juntos!
+                </p>
+                <dl class="contact-info">
+                    <div>
+                        <dt>&gt; Email:</dt>
+                        <dd><a href="mailto:castrillonrojosantiago@gmail.com">castrillonrojosantiago@gmail.com</a></dd>
+                    </div>
+                    <div>
+                        <dt>&gt; Base:</dt>
+                        <dd>Medellín, Colombia</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <!-- Columna Derecha -->
+            <div class="contact-form-col">
+                <form action="https://formspree.io/f/xqpknwel" method="POST" class="retro-form">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" class="retro-form-input" required
+                            placeholder="Tu nombre...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="retro-form-input" required
+                            placeholder="tu@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" class="retro-form-textarea" rows="4" required
+                            placeholder="Escribe tu mensaje..."></textarea>
+                    </div>
+                    <button type="submit" class="retro-btn primary-btn submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Botón de descarga del CV -->
+        <div class="cv-container">
+            <a href="./assets/cv-santiago.pdf" class="retro-btn cv-btn" download>Descargar CV</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="separator" aria-hidden="true">----------------------------------------------------</div>
+        <p class="footer-thanks">Gracias por llegar hasta aquí</p>
+        <h3 class="footer-name">Santiago Castrillón Rojo</h3>
+        <p class="footer-copy">© 2026 Santiago Castrillón Rojo · Hecho con ☕</p>
+
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/santiago-castrillon-rojo/" class="footer-social-btn"
+                aria-label="Ir a LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+            </a>
+            <a href="https://github.com/SantiagoCastrillonR" class="footer-social-btn" aria-label="Ir a GitHub"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            <a href="mailto:castrillonrojosantiago@gmail.com" class="footer-social-btn" aria-label="Enviar correo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                        d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.71v-11.139l4.623 5.429zm1.611 1.888l3.766 4.418 3.766-4.418 5.51 6.455h-18.552l5.51-6.455zm14.166-7.817l-4.623 5.71 4.623 5.429v-11.139zm-15.778-1h13.418l-6.709 7.841-6.709-7.841z" />
+                </svg>
+            </a>
+        </div>
+
+        <p class="footer-credit"><br>user:~$ exit_</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
