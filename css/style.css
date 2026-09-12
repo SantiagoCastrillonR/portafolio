@@ -26,7 +26,6 @@ ul {
     }
 }
 
-
 /* ESTILOS DEL BODY */
 body {
     background-color: var(--bg-color);
@@ -47,7 +46,7 @@ h3 {
     font-family: 'Press Start 2P', monospace;
 }
 
-/* teclado visible en los elementos interactivos */
+/* Teclado visible en los elementos interactivos */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -56,8 +55,7 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
-
-/* NAVEGACIÓN  */
+/* NAVEGACIÓN */
 .top-nav {
     position: fixed;
     top: 25px;
@@ -71,13 +69,11 @@ textarea:focus-visible {
     position: relative;
 }
 
-/* posicionar el dropdown */
 .social-group {
     display: flex;
     gap: 3px;
 }
 
-/* Botón cuadrado */
 .nav-btn {
     background-color: #4C4C4C;
     color: var(--bg-color);
@@ -98,7 +94,6 @@ textarea:focus-visible {
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* Menú desplegable */
 .dropdown-menu {
     position: absolute;
     top: 50px;
@@ -128,8 +123,7 @@ textarea:focus-visible {
     color: var(--terminal-green);
 }
 
-
-/* HERO  */
+/* HERO */
 .hero-section {
     display: flex;
     justify-content: center;
@@ -138,7 +132,6 @@ textarea:focus-visible {
     padding: 20px 0;
 }
 
-/* carcasa del monitor */
 .monitor-frame {
     background-color: #f4f4f4;
     padding: 30px;
@@ -151,7 +144,6 @@ textarea:focus-visible {
     transform-origin: center center;
 }
 
-/* Pantalla oscura del monitor */
 .monitor-screen {
     background-color: var(--monitor-bg);
     border-radius: 20px;
@@ -166,7 +158,6 @@ textarea:focus-visible {
     width: 100%;
 }
 
-/* Efecto de líneas de escaneo */
 .monitor-screen::after {
     content: " ";
     display: block;
@@ -181,10 +172,8 @@ textarea:focus-visible {
     z-index: 4;
     background-size: 100% 3px, 6px 100%;
     pointer-events: none;
-    /* para que no bloquee los clics */
 }
 
-/* Línea de brillo que "escanea" la pantalla de arriba a abajo */
 .monitor-screen::before {
     content: " ";
     display: block;
@@ -209,7 +198,6 @@ textarea:focus-visible {
     }
 }
 
-/* texto de presentación + avatar  */
 .terminal-layout {
     display: flex;
     justify-content: space-between;
@@ -254,7 +242,6 @@ textarea:focus-visible {
     z-index: 3;
 }
 
-/* image pixelated */
 .pixel-avatar {
     width: 280px;
     max-width: 100%;
@@ -300,7 +287,6 @@ textarea:focus-visible {
     animation: blink 1s step-end infinite;
 }
 
-/* Animación de "parpadeo" disponible */
 .cursor,
 .blink {
     animation: blink 1s step-end infinite;
@@ -312,7 +298,6 @@ textarea:focus-visible {
     }
 }
 
-
 /* SEPARADORES */
 .separator {
     text-align: center;
@@ -320,12 +305,9 @@ textarea:focus-visible {
     margin: 50px 0;
     opacity: 0.5;
     scroll-margin-top: 30px;
-    /* deja un pequeño espacio al hacer scroll hacia un #ancla */
     overflow: hidden;
-    /* evita que los guiones se desborden en pantallas angostas */
     white-space: nowrap;
 }
-
 
 /* Acerca de mí */
 .about-section {
@@ -336,7 +318,6 @@ textarea:focus-visible {
     scroll-margin-top: 20px;
 }
 
-/* contenedor se mueve levemente con el scroll  */
 .about-container {
     display: flex;
     flex-direction: column;
@@ -361,15 +342,13 @@ textarea:focus-visible {
     box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
-.about-main-text,
-.about-sub-text {
+.about-main-text {
     font-size: 26px;
     line-height: 1.6;
     font-family: 'VT323', monospace;
     text-align: justify;
 }
 
-/* Mis Skills" */
 .subsection-subtitle {
     font-size: 12px;
     font-family: 'Press Start 2P', monospace;
@@ -385,7 +364,6 @@ textarea:focus-visible {
     display: inline-block;
 }
 
-/* Contenedor de habilidades */
 .skills-container-inline {
     display: flex;
     flex-wrap: wrap;
@@ -410,7 +388,6 @@ textarea:focus-visible {
     box-shadow: 6px 6px 0px var(--text-color);
 }
 
-
 /* PROYECTOS */
 .section-title {
     text-align: center;
@@ -433,7 +410,6 @@ textarea:focus-visible {
     align-items: center;
 }
 
-/* Tarjeta de proyecto */
 .retro-card {
     border: 4px solid var(--text-color);
     padding: 25px;
@@ -504,7 +480,6 @@ textarea:focus-visible {
     min-width: 360px;
 }
 
-/* Recuadro oscuro que contiene la imagen de del proyecto */
 .project-img-container {
     background-color: #1a1a1a;
     border-radius: 6px;
@@ -547,7 +522,6 @@ textarea:focus-visible {
     box-shadow: 1px 1px 0px var(--highlight-bg);
 }
 
-
 /* CONTACTO */
 .contact-section {
     max-width: 1000px;
@@ -576,7 +550,6 @@ textarea:focus-visible {
     min-width: 380px;
 }
 
-/* Etiqueta verde "Disponible para nuevas oportunidades" */
 .status-badge {
     font-family: 'Press Start 2P', monospace;
     font-size: 10px;
@@ -609,7 +582,6 @@ textarea:focus-visible {
     color: var(--highlight-bg);
 }
 
-/* Datos de contacto */
 .contact-info {
     font-family: 'Press Start 2P', monospace;
     font-size: 10px;
@@ -638,7 +610,6 @@ textarea:focus-visible {
     color: var(--text-color);
 }
 
-/* Botón genérico estilo retro */
 .retro-btn {
     text-decoration: none;
     color: var(--text-color);
@@ -666,7 +637,6 @@ textarea:focus-visible {
     color: var(--bg-color);
 }
 
-/* Formulario de contacto */
 .contact-form-col {
     flex: 1;
     max-width: 480px;
@@ -714,12 +684,19 @@ textarea:focus-visible {
     border-color: var(--highlight-bg);
 }
 
+.form-status-msg {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    text-align: center;
+    margin-top: -5px;
+    color: #2e7d32;
+}
+
 .submit-btn {
     width: 100%;
     margin-top: 10px;
 }
 
-/* Botón descarga de CV  */
 .cv-container {
     display: flex;
     justify-content: center;
@@ -733,7 +710,6 @@ textarea:focus-visible {
     font-size: 12px;
     padding: 18px 30px;
 }
-
 
 /* FOOTER */
 .site-footer {
@@ -792,7 +768,6 @@ textarea:focus-visible {
     font-size: 20px;
 }
 
-
 /* UTILIDADES DE ACCESIBILIDAD */
 .visually-hidden {
     position: absolute;
@@ -806,10 +781,7 @@ textarea:focus-visible {
     border: 0;
 }
 
-
 /* RESPONSIVE */
-
-/* Tablets */
 @media (max-width: 900px) {
 
     .contact-grid,
@@ -829,14 +801,12 @@ textarea:focus-visible {
     }
 }
 
-/* Celulares */
 @media (max-width: 600px) {
     body {
         font-size: 18px;
         padding: 0 14px 30px 14px;
     }
 
-    /* menú  */
     .top-nav {
         top: 14px;
         left: 14px;
@@ -848,7 +818,6 @@ textarea:focus-visible {
         height: 32px;
     }
 
-    /* monitor */
     .monitor-frame {
         padding: 14px;
         border-radius: 24px;
@@ -900,7 +869,6 @@ textarea:focus-visible {
     }
 }
 
-/* Celulares muy angostos */
 @media (max-width: 400px) {
     .terminal-layout {
         justify-content: center;
